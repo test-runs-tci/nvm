@@ -36,17 +36,6 @@ env:
     - PATH="$(echo $PATH | sed 's/::/:/')"
     - PATH="/usr/lib/ccache/:$PATH"
     - NVM_DIR="${TRAVIS_BUILD_DIR}"
-  include:
-    - env: SHELL=bash TEST_SUITE=xenial
-      dist: xenial
-    - env: SHELL=sh TEST_SUITE=xenial
-      dist: xenial
-    - env: SHELL=dash TEST_SUITE=xenial
-      dist: xenial
-    - env: SHELL=zsh TEST_SUITE=xenial
-      dist: xenial
-   #- env: SHELL=ksh TEST_SUITE=xenial
-   #  dist: xenial
   matrix:
     - SHELL=bash TEST_SUITE=install_script
     - SHELL=sh TEST_SUITE=fast
@@ -84,3 +73,15 @@ env:
     - SHELL=zsh TEST_SUITE=installation_iojs WITHOUT_CURL=1
     #  - SHELL=ksh TEST_SUITE=installation_iojs
     #  - SHELL=ksh TEST_SUITE=installation_iojs WITHOUT_CURL=1
+jobs:
+  include:
+    - env: SHELL=bash TEST_SUITE=xenial
+      dist: xenial
+    - env: SHELL=sh TEST_SUITE=xenial
+      dist: xenial
+    - env: SHELL=dash TEST_SUITE=xenial
+      dist: xenial
+    - env: SHELL=zsh TEST_SUITE=xenial
+      dist: xenial
+   #- env: SHELL=ksh TEST_SUITE=xenial
+   #  dist: xenial
